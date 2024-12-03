@@ -22,6 +22,7 @@ class _MyHomeState extends State<MyHome> {
           backgroundColor: const Color.fromARGB(255, 255, 108, 79),
           foregroundColor: Colors.white,
         ),
+        
         body: Container(
           color: const Color.fromARGB(255, 255, 198, 113),
           child: GridView.count(
