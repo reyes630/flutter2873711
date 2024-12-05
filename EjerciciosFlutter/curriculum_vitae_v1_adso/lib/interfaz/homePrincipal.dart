@@ -1,6 +1,9 @@
+import 'package:curriculum_vitae_v1_adso/educacionFormal/principalEducacionFormal.dart';
 import 'package:curriculum_vitae_v1_adso/experienciaLaboral/principalExperienciaLaboral.dart';
+import 'package:curriculum_vitae_v1_adso/formacionContinuada/principalFormacionContinuada.dart';
 import 'package:curriculum_vitae_v1_adso/main.dart';
 import 'package:curriculum_vitae_v1_adso/perfilPersonal/perfilPersonal.dart';
+import 'package:curriculum_vitae_v1_adso/publicaciones/principalPublicaciones.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,14 +25,14 @@ class _HomePrincipalState extends State<HomePrincipal> {
         backgroundColor: Utils.primaryColor,
         foregroundColor: Utils.foregroundColor,
       ),
-      body: Center(
+      body: const Center(
         child: Image(image: NetworkImage("assets/images/logoReyes.png")),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Center(
                 child: CircleAvatar(
                   radius: 100,
@@ -43,8 +46,8 @@ class _HomePrincipalState extends State<HomePrincipal> {
               leading: Icon(Icons.person),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
-                miControlador.cambiarTitulo("Curriculum Vitae V2 - ADSO");
                 Navigator.pop(context);
+                miControlador.cambiarTitulo("Curriculum Vitae V2 - ADSO");
               },
             ),
             
@@ -62,19 +65,10 @@ class _HomePrincipalState extends State<HomePrincipal> {
               title: Text("Educación Formal"),
               leading: Icon(Icons.school),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {
+              onTap: (){
+                //Navigator.pop(context);
                 miControlador.cambiarTitulo("Educación Formal");
-                Navigator.pop(context);
-                Get.defaultDialog(
-                  title: "Alerta",
-                  middleText: "Esta sección pronto será publlicada...",
-                  onConfirm: () {
-                    
-                  },
-                  onCancel: () {
-                    
-                  },
-                );
+                Get.to(const PrincipalEducacionFormal());
               },
             ),
             
@@ -82,14 +76,10 @@ class _HomePrincipalState extends State<HomePrincipal> {
               title: Text("Formación Continuada"),
               leading: Icon(Icons.book),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {
+              onTap: (){
+                //Navigator.pop(context);
                 miControlador.cambiarTitulo("Formación Continuada");
-                Get.snackbar(
-                  "Atención!", "Esta sección no esta disponible",
-                  backgroundColor: Colors.red[300],
-                  colorText: Colors.white,
-                  icon: Icon(Icons.dangerous)
-                  );
+                Get.to(const PrincipalFormacionContinuada());
               },
             ),
             
@@ -100,6 +90,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () { 
                 miControlador.cambiarTitulo("Publicaciones");
                 Navigator.pop(context);
+                Get.to(const PrincipalPublicaciones());
               },
             ),
             
@@ -110,7 +101,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
               onTap: () {
                 miControlador.cambiarTitulo("Experiencia Laboral");
                 Navigator.pop(context);
-                Get.to(PrincipalexperienciaLaboral());
+                Get.to(const PrincipalExperienciaLaboral());
               },
             ),
             
