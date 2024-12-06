@@ -7,6 +7,7 @@ import 'data/educacionFormalData.dart';
 import 'data/experienciaData.dart';
 import 'data/formacionContinuadaData.dart';
 import 'data/publicacionesData.dart';
+import 'data/referenciasData.dart';
 import 'interfaz/principal.dart';
 
 void main(List<String> args) {
@@ -15,6 +16,7 @@ void main(List<String> args) {
   miControlador.cambiarListaEducacionFormal(listaEducacionFormal);
   miControlador.cambiarListaFormacionContinuada(listaFormacionContinuada);
   miControlador.cambiarListaPublicaciones(listaPublicaciones);
+  miControlador.cambiarListaReferencias(listaReferencias);
   runApp(const Principal());
 }
 

@@ -6,6 +6,7 @@ class Mycontroller extends GetxController {
   final _listaEducacionFormal = [].obs;
   final _listaFormacionContinuada = [].obs;
   final _listaPublicaciones = [].obs;
+  final _listaReferencias = [].obs; 
 
   void cambiarTitulo(String item) {
     _titulo.value = item;
@@ -84,4 +85,23 @@ void editItemListaPublicaciones(int index, Map itemEdit) {
 }
 
 List get listaPublicaciones => _listaPublicaciones.value; // Obtenemos la lista de publicaciones
+
+//listaReferencias
+  void addItemListaReferencias(Map<String, dynamic> item) {
+    _listaReferencias.add(item);
+  }
+
+  void cambiarListaReferencias(List item) {
+    _listaReferencias.value = item;
+  }
+
+  void removeItemListaReferencias(int index) {
+    _listaReferencias.removeAt(index);
+  }
+
+  void editItemListaReferencias(int index, Map itemEdit) {
+    _listaReferencias[index] = itemEdit;
+  }
+
+  List get listaReferencias => _listaReferencias.value; // Obtener la lista de referencias
 }
